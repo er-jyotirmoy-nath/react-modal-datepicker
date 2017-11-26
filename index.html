@@ -19,6 +19,9 @@
     .successclass{
       border-color: #22ad0d;
     }
+    .hide{
+      display: none;
+    }
     </style>
 
 </head>
@@ -49,7 +52,7 @@
             onDayChange={this.getSelDate.bind(this)}
             placeholder="MM/DD/YYYY"
           />
-          <p> {this.state.dateselected}</p>
+          <span className={this.state.dateselected?"":"hide"}> &nbsp;- {this.state.dateselected}</span>
     </div>);
       }
     }
@@ -76,7 +79,7 @@
 
     return (
       <div>
-        <p>Click to get the full Modal experience!</p>
+        <p>Click to pick date !</p>
 
         <Button
           bsStyle="primary"

@@ -41,9 +41,13 @@
         console.log(day._d.toLocaleDateString());
         this.setState({inputclass:'form-control successclass',dateselected:day._d.toLocaleDateString()});
       } 
+      save(){
+
+      }
       render() {        
      
        const DayPickerInput = window.DayPicker.Input;
+       var Button = window.ReactBootstrap.Button;
      return(
     <div className="container">
         <p>Please type a day:</p>
@@ -53,6 +57,13 @@
             placeholder="MM/DD/YYYY"
           />
           <span className={this.state.dateselected?"":"hide"}> &nbsp;- {this.state.dateselected}</span>
+    <br/>
+    <br/>
+    <Button
+          bsStyle="success"
+          bsSize="medium"
+          onClick={this.save.bind(this)}
+        >Save</Button>      
     </div>);
       }
     }

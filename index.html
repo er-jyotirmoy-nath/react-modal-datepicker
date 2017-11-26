@@ -15,7 +15,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.0/superagent.min.js"></script>
     <script src="datepicker/daypicker.min.js"></script>
     <link rel="stylesheet" href="datepicker/style.css">
-
+    <style>
+    .successclass{
+      border-color: #22ad0d;
+    }
+    </style>
 
 </head>
 
@@ -28,8 +32,12 @@
         class Datetime extends React.Component {
       constructor (props) {
         super(props)
-        
-      }      
+        this.state = {inputclass:'form-control'};
+      }     
+      getSelDate(day){
+        console.log(day._d.toLocaleDateString());
+        this.setState({inputclass:'form-control successclass'});
+      } 
       render() {        
      
        const DayPickerInput = window.DayPicker.Input;
@@ -37,8 +45,8 @@
     <div className="container">
         <p>Please type a day:</p>
        
-    <DayPickerInput className="form-control"
-            onDayChange={day => console.log(day)}
+    <DayPickerInput className={this.state.inputclass}
+            onDayChange={this.getSelDate.bind(this)}
             placeholder="MM/DD/YYYY"
           />
     </div>);

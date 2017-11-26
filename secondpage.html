@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+        <script src="https://unpkg.com/react-day-picker/lib/daypicker.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/react-day-picker/lib/style.css">
+    </head>
+    <body>
+    <div id="root2"></div>
+    </body>
+    <script type="text/babel">
+    var DayPickerInput  = window.DayPicker.Input.default;
+    class Exmaple extends React.Component{
+        
+        render(){
+            console.log(DayPickerInput);
+            return (
+    <div>
+      <p>Please type a day:</p>
+      <DayPickerInput onDayChange={day => console.log(day)} />
+    </div>
+  );
+        }
+    }
+    ReactDOM.render(<Exmaple />,document.getElementById('root2'));
+    
+    </script>
+</html>

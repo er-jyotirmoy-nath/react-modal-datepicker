@@ -32,11 +32,11 @@
         class Datetime extends React.Component {
       constructor (props) {
         super(props)
-        this.state = {inputclass:'form-control'};
+        this.state = {inputclass:'form-control',dateselected:''};
       }     
       getSelDate(day){
         console.log(day._d.toLocaleDateString());
-        this.setState({inputclass:'form-control successclass'});
+        this.setState({inputclass:'form-control successclass',dateselected:day._d.toLocaleDateString()});
       } 
       render() {        
      
@@ -44,11 +44,12 @@
      return(
     <div className="container">
         <p>Please type a day:</p>
-       
+      
     <DayPickerInput className={this.state.inputclass}
             onDayChange={this.getSelDate.bind(this)}
             placeholder="MM/DD/YYYY"
           />
+          <p> {this.state.dateselected}</p>
     </div>);
       }
     }
